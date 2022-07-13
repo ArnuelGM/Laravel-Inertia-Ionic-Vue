@@ -1,15 +1,19 @@
 <template>
-  <div :class="$attrs.class">
-    <label v-if="label" class="form-label" :for="id">{{ label }}:</label>
-    <input :id="id" ref="input" v-bind="{ ...$attrs, class: null }" class="form-input" :class="{ error: error }" :type="type" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
+  <ion-item :class="$attrs.class">
+    <ion-label v-if="label" position="stacked" :for="id">{{ label }}:</ion-label>
+    <ion-input :id="id" ref="input" v-bind="{ ...$attrs, class: null }" :class="{ error: error }" :type="type" :value="modelValue" @ion-input="$emit('update:modelValue', $event.target.value)" />
     <div v-if="error" class="form-error">{{ error }}</div>
-  </div>
+  </ion-item>
 </template>
 
 <script>
 import { v4 as uuid } from 'uuid'
+import { IonInput, IonLabel, IonItem } from '@ionic/vue';
 
 export default {
+  components: {
+    IonInput, IonLabel, IonItem,
+  },
   inheritAttrs: false,
   props: {
     id: {
@@ -29,7 +33,7 @@ export default {
   emits: ['update:modelValue'],
   methods: {
     focus() {
-      this.$refs.input.focus()
+      this.$refs.input.setFocus()
     },
     select() {
       this.$refs.input.select()

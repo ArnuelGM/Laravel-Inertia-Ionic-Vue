@@ -20,6 +20,8 @@
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
         "@inertiajs/server": "^0.1.0",
+        "@ionic/vue": "^6.1.13",
+        "@ionic/vue-router": "^6.1.13",
         "@popperjs/core": "^2.11.0",
         "@vue/server-renderer": "^3.2.27",
         "autoprefixer": "^10.4.0",
@@ -36,6 +38,7 @@
         "uuid": "^8.3.2",
         "vue": "^3.2.27",
         "vue-loader": "^16.2.0",
+        "vue-router": "^4.1.2",
         "webpack-node-externals": "^3.0.0"
     }
 }
